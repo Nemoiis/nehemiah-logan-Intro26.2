@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #1a1a1a;
+  padding: 16px 32px;
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #333;
+}
+
+nav a {
+  color: #ff3c3c;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: 48px;
+  color: #ff3c3c;
+  text-align: center;
+  padding: 60px 32px 20px;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 24px;
+  color: #ff3c3c;
+  margin-bottom: 20px;
+  border-left: 4px solid #ff3c3c;
+  padding-left: 12px;
+}
+
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 32px;
+  border-bottom: 1px solid #222;
+}
+
+/* Experience - Flexbox */
+#Experience ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#Experience li {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Connect - Flexbox */
+#Connect ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+#Connect a {
+  color: #0f0f0f;
+  background-color: #ff3c3c;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#Connect a:hover {
+  background-color: #ffffff;
+}
