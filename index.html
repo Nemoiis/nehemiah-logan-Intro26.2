@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="css/index.css">
   </head>
   <body>
+
     <nav>
       <a href="#About">About</a>
       <a href="#Experience">Experience</a>
       <a href="#Skills">Skills</a>
       <a href="#Projects">Projects</a>
       <a href="#Connect">Connect</a>
+      <a href="#Leave_a_message">Leave A Message</a>
     </nav>
 
     <h1>Nehemiah Logan</h1>
@@ -39,7 +41,6 @@
       <h2>Skills</h2>
       <ul>
 
-
       </ul>
     </section>
 
@@ -55,6 +56,37 @@
         <li><a href="https://www.linkedin.com/in/nehemiah-logan-b24610230/">LinkedIn</a></li>
       </ul>
     </section>
+
+    <section id="Leave_a_message">
+      <h2> Leave A Message!</h2>
+      <form name="leave_message">
+        <label for="name">Your Name</label><br>
+        <input id="name" type="text" name="usersName" required><br>
+
+        <label for="email">Your Email</label><br>
+        <input id="email" type="email" name="usersEmail" required><br>
+
+        <label for="message">Leave A Message</label><br>
+        <textarea id="message" name="usersMessage" required></textarea><br>
+        <button id ="formButton" type="submit"> Submit </button>
+      </form>
+    </section>
+
+    <section id="messages">
+      <h2> Messages</h2>
+      <ul>
+
+
+      </ul>
+    </section>
+
+
+
+
+
+
+    <footer>
     <script src="js/index.js"></script>
+    </footer>
   </body>
 </html>
