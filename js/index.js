@@ -16,6 +16,7 @@ for (let i = 0; i < skills.length; i++){
     skill.textContent = skills[i];
     skillsList.appendChild(skill);
 }
+const messages = document.getElementById("messages");
 
 const messageForm = document.querySelector("[name='leave_message']");
 messageForm.addEventListener("submit", function(event){
