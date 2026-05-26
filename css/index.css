@@ -180,3 +180,23 @@ height: 100px;
 
 #messages { display: none; 
 }
+
+@media (max-width: 600px){
+
+    form input, form textarea {
+        width: 100%;
+    }
+
+    #formButton {
+        width: 100%;
+        padding: 15px;
+    }
+
+    nav {
+      flex-direction: column;
+    }
+
+
+        
+
+}
