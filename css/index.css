@@ -1,12 +1,16 @@
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Share+Tech+Mono&display=swap');
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
 body {
   background-color: #0f0f0f;
   color: #e0e0e0;
@@ -15,6 +19,90 @@ body {
   line-height: 1.6;
 }
 
+/* Light-mode */
+body.light-mode {
+    background-color: #faf9f6;
+    color: #1a1a1a;
+}
+
+body.light-mode nav {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+
+body.light-mode nav a {
+    color: #0055ff;
+}
+
+body.light-mode nav a:hover {
+    color: #000000;
+}
+
+body.light-mode h1 {
+    color: #0055ff;
+}
+
+body.light-mode h2 {
+    color: #0055ff;
+    border-left: 4px solid #0055ff;
+}
+
+body.light-mode p {
+    color: #1a1a1a;
+}
+
+body.light-mode section {
+    border-bottom: 1px solid #ddd;
+}
+
+body.light-mode #Experience li,
+body.light-mode #Skills li,
+body.light-mode .projects {
+    background-color: #e8e8e8;
+    color: #1a1a1a;
+    border: 1px solid #ccc;
+}
+
+body.light-mode .projects a:link {
+  color: rgb(0, 0, 0);
+}
+
+body.light-mode .projects:hover {
+    background-color: #0055ff;
+}
+
+body.light-mode .projects:hover a,
+body.light-mode .projects:hover p {
+    color: #ffffff !important;
+}
+
+body.light-mode .projects a:visited {
+    color: #1a1a1a;
+}
+
+body.light-mode #Connect a {
+    background-color: #0055ff;
+    color: #ffffff;
+}
+
+body.light-mode #Connect a:hover {
+    background-color: #000000;
+}
+
+body.light-mode #formButton {
+    background-color: #0055ff;
+    color: #ffffff;
+}
+
+body.light-mode form label {
+    color: #0055ff;
+}
+
+body.light-mode .toggle-label {
+    background-color: #ccc;
+}
+
+/* Nav */
 nav {
   position: sticky;
   top: 0;
@@ -23,6 +111,7 @@ nav {
   display: flex;
   gap: 24px;
   border-bottom: 1px solid #333;
+  align-items: center;
 }
 
 nav a {
@@ -37,6 +126,7 @@ nav a:hover {
   color: #ffffff;
 }
 
+/* Headings */
 h1 {
   font-family: 'Space Mono', monospace;
   font-size: 48px;
@@ -55,12 +145,14 @@ h2 {
   padding-left: 12px;
 }
 
+/* Paragraph */
 p {
   font-family: 'Share Tech Mono', monospace;
   font-size: 16px;
   color: #ffffff;
 }
 
+/* Sections */
 section {
   max-width: 800px;
   margin: 0 auto;
@@ -68,7 +160,7 @@ section {
   border-bottom: 1px solid #222;
 }
 
-/* Experience - Flexbox */
+/* Experience */
 #Experience ul {
   list-style: none;
   display: flex;
@@ -85,7 +177,7 @@ section {
   font-size: 14px;
 }
 
-/* Connect - Flexbox */
+/* Connect */
 #Connect ul {
   list-style: none;
   display: flex;
@@ -106,6 +198,7 @@ section {
   background-color: #ffffff;
 }
 
+/* Skills */
 #Skills ul{
   list-style: none;
   display: flex;
@@ -121,6 +214,7 @@ section {
   font-size: 14px;
 }
 
+/* Form */
 #formButton{
   color: #0f0f0f;
   background-color: #ff3c3c;
@@ -150,6 +244,13 @@ form input{
   width: 250px;
 }
 
+form textarea{
+  resize: none;
+  width: 250px;
+  height: 100px;
+}
+
+/* Messages */
 .message-item {
   color: #ffffff;
   font-family: 'Share Tech Mono', monospace;
@@ -172,20 +273,15 @@ form input{
   cursor: pointer;
 }
 
-form textarea{
-resize: none;
-width: 250px;
-height: 100px;
-}
-
 #messages { 
   display: none; 
 }
 
+/* Projects */
 .projectList{
-display: flex;
-flex-direction: row;
-gap: 16px;
+  display: flex;
+  flex-direction: row;
+  gap:16px;
 }
 
 .projects{
@@ -199,8 +295,8 @@ gap: 16px;
 }
 
 .projects:hover{
-background-color: white;
-transition:background-color 2s;
+  background-color: white;
+  transition:background-color 2s;
 }
 
 .projects:hover a{
@@ -221,7 +317,43 @@ transition:background-color 2s;
   text-decoration: none;
 }
 
+/* Toggle */
+.toggle{
+  display: none;
+}
 
+.toggle-label{
+  display: flex;
+  width:40px;
+  height:22px;
+  background-color: #e0e0e0;
+  margin-left: auto;
+  border-radius: 75px;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.toggle-label::before{
+  content:'';
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: #0f0f0f;
+  position:absolute;
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+
+.toggle:checked + .toggle-label{
+  background: linear-gradient(45deg, #0055ff, #00c6ff);}
+
+.toggle:checked +.toggle-label::before{
+  transform: translateX(16px);
+}
+
+/* Mobile */
 @media (max-width: 600px){
 
     form input, form textarea {
@@ -234,19 +366,6 @@ transition:background-color 2s;
     }
 
     nav {
-      flex-direction: row;
-      flex-wrap: wrap;
-      position: static;
+      flex-direction: column;
     }
-
-     #Skills ul{
-      flex-wrap: wrap;
-     } 
-    .projectList{
-      flex-wrap: wrap;
-    }
-
-
-        
-
 }

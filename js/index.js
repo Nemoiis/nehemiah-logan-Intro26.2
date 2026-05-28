@@ -87,3 +87,12 @@ for (let i = 0; i < repositories.length; i++){
 .catch(function(error){
     console.error("Failed to load repositories:", error);
   });
+
+const toggled = document.getElementById('toggle');
+toggled.addEventListener("change", function() {
+    if (toggled.checked) {
+        document.body.classList.add('light-mode');
+    } else {
+        document.body.classList.remove('light-mode');
+    }
+})
