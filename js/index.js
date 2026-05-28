@@ -63,3 +63,27 @@ messageForm.addEventListener("submit", function(event){
 
     messageForm.reset();
 });
+
+fetch('https://api.github.com/users/Nemoiis/repos')
+.then(function(response){
+    return response.json();
+})
+
+.then(function(response){
+    const repositories = response;
+    console.log(repositories);
+
+const projectSection = document.getElementById("Projects");
+const projectList = projectSection.querySelector('ul');
+
+for (let i = 0; i < repositories.length; i++){
+    const project = document.createElement('li');
+    project.classList.add("projects");
+    project.innerHTML = `<a href=${repositories[i].html_url}>${repositories[i].name}</a><p>${repositories[i].description}</p>`
+    projectList.appendChild(project);
+}
+})
+
+.catch(function(error){
+    console.error("Failed to load repositories:", error);
+  });

@@ -178,8 +178,49 @@ width: 250px;
 height: 100px;
 }
 
-#messages { display: none; 
+#messages { 
+  display: none; 
 }
+
+.projectList{
+display: flex;
+flex-direction: row;
+gap: 16px;
+}
+
+.projects{
+  list-style: none;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.projects:hover{
+background-color: white;
+transition:background-color 2s;
+}
+
+.projects:hover a{
+  color: black !important;
+}
+
+.projects:hover a,
+.projects:hover p {
+  color: black !important;
+}
+
+.projects a:link {
+  color: white;
+}
+
+.projects a:visited {
+  color: white;
+  text-decoration: none;
+}
+
 
 @media (max-width: 600px){
 
@@ -193,7 +234,16 @@ height: 100px;
     }
 
     nav {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
+      position: static;
+    }
+
+     #Skills ul{
+      flex-wrap: wrap;
+     } 
+    .projectList{
+      flex-wrap: wrap;
     }
 
 
