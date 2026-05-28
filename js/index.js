@@ -96,3 +96,10 @@ toggled.addEventListener("change", function() {
         document.body.classList.remove('light-mode');
     }
 })
+
+  const audio = document.getElementById('bgMusic');
+
+  window.addEventListener('click', () => {
+    audio.play();
+  }, { once: true });
+
