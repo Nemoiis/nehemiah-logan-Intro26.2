@@ -97,9 +97,3 @@ toggled.addEventListener("change", function() {
     }
 })
 
-  const audio = document.getElementById('bgMusic');
-
-  window.addEventListener('click', () => {
-    audio.play();
-  }, { once: true });
-
