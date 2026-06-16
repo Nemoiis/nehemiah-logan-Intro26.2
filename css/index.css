@@ -21,30 +21,30 @@ body {
 
 /* Light-mode */
 body.light-mode {
-    background-color: #faf9f6;
+    background-color: #fdf6f0;
     color: #1a1a1a;
 }
 
 body.light-mode nav {
-    background-color: #f0f0f0;
-    border-bottom: 1px solid #ccc;
+    background-color: #e8f5ec;
+    border-bottom: 1px solid #4a7c59;
 }
 
 body.light-mode nav a {
-    color: #0055ff;
+    color: #e8619d;
 }
 
 body.light-mode nav a:hover {
-    color: #000000;
+    color: #111111;
 }
 
 body.light-mode h1 {
-    color: #0055ff;
+    color: #4a7c59;
 }
 
 body.light-mode h2 {
-    color: #0055ff;
-    border-left: 4px solid #0055ff;
+    color: #e8619d;
+    border-left: 4px solid #4a7c59;
 }
 
 body.light-mode p {
@@ -52,23 +52,23 @@ body.light-mode p {
 }
 
 body.light-mode section {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #4a7c59;
 }
 
 body.light-mode #Experience li,
 body.light-mode #Skills li,
 body.light-mode .projects {
-    background-color: #e8e8e8;
+    background-color: #f0faf3;
     color: #1a1a1a;
-    border: 1px solid #ccc;
+    border: 1px solid #4a7c59;
 }
 
 body.light-mode .projects a:link {
-  color: rgb(0, 0, 0);
+    color: #e8619d;
 }
 
 body.light-mode .projects:hover {
-    background-color: #0055ff;
+    background-color: #e8619d;
 }
 
 body.light-mode .projects:hover a,
@@ -81,25 +81,25 @@ body.light-mode .projects a:visited {
 }
 
 body.light-mode #Connect a {
-    background-color: #0055ff;
+    background-color: #4a7c59;
     color: #ffffff;
 }
 
 body.light-mode #Connect a:hover {
-    background-color: #000000;
+    background-color: #e8619d;
 }
 
 body.light-mode #formButton {
-    background-color: #0055ff;
+    background-color: #e8619d;
     color: #ffffff;
 }
 
 body.light-mode form label {
-    color: #0055ff;
+    color: #4a7c59;
 }
 
 body.light-mode .toggle-label {
-    background-color: #ccc;
+    background-color: #4a7c59;
 }
 
 /* Nav */
@@ -357,7 +357,7 @@ form textarea{
 }
 
 .toggle:checked + .toggle-label{
-  background: linear-gradient(45deg, #0055ff, #00c6ff);}
+  background: linear-gradient(45deg, #e8619d, #4a7c59);}
 
 .toggle:checked +.toggle-label::before{
   transform: translateX(16px);
