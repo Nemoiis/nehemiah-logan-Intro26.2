@@ -231,3 +231,7 @@ display:none;
 .conCard:hover i {
   display: none;
 }
+
+#condition, #temperature {
+  display: none;
+}

@@ -203,6 +203,7 @@ section {
   list-style: none;
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 #Skills li {
@@ -278,20 +279,29 @@ form textarea{
 }
 
 /* Projects */
-.projectList{
-  display: flex;
-  flex-direction: row;
-  gap:16px;
+/* Projects */
+.projectList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.projects{
-  list-style: none;
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-  padding: 10px 20px;
-  border: 1px solid #333;
-  border-radius: 4px;
-  font-size: 14px;
+.projects {
+    list-style: none;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 14px 20px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.projects a {
+    min-width: 160px;
 }
 
 .projects:hover{
@@ -368,4 +378,16 @@ form textarea{
     nav {
       flex-direction: column;
     }
+}
+
+.imgContainer{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:15px;
+}
+
+.img{
+  width: 350px;
+  height: 350px;
 }
