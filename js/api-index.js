@@ -51,13 +51,16 @@ todaysWeather.innerHTML = `<span class='location'>Detroit, MI</span><div class='
 
 
 
+
+
 // Nav buttonz
 const conditionBtn = document.getElementById('conditionBtn');
 conditionBtn.addEventListener('click', function(){
     document.getElementById('condition').style.display = 'block';
+    document.getElementById('temperature').style.display = 'none';
 
     // Conditions fetch
-fetch('https://api.open-meteo.com/v1/forecast?latitude=42.331429&longitude=-83.045753&precipitation_unit=inch&temperature_unit=fahrenheit&wind_speed_unit=mph&current=weather_code,wind_speed_10m,precipitation,cloud_cover,temperature_2m')
+fetch('https://api.open-meteo.com/v1/forecast?latitude=42.331429&longitude=-83.045753&precipitation_unit=inch&temperature_unit=fahrenheit&wind_speed_unit=mph&current=weather_code,wind_speed_10m,precipitation,cloud_cover,temperature_2m,relative_humidity_2m')
 .then(function(conResponse){
     return conResponse.json();
 })
@@ -74,7 +77,9 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=42.331429&longitude=-83.0
     const windSpeed = Math.round(conData.current.wind_speed_10m);
     const precip = conData.current.precipitation;
     const clouds = conData.current.cloud_cover;
+    const humidity = conData.current.relative_humidity_2m;
     const windIcon = getWindIcon(windSpeed);
+    
 
     const windCard = document.createElement('li');
     windCard.classList.add('conCard');
@@ -90,6 +95,11 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=42.331429&longitude=-83.0
     cloudCard.classList.add('conCard');
     cloudCard.innerHTML = `<span class="cardName">Cloud Coverage</span><i class="wi wi-cloudy"></i><span class="speed">${clouds} %</span><span class="card-desc">Cloud coverage indicates the percentage of the sky currently covered by clouds, from 0% (clear) to 100% (fully overcast).</span>`;
     conditionsList.appendChild(cloudCard);
+
+    const humidityCard = document.createElement('li');
+    humidityCard.classList.add('conCard');
+    humidityCard.innerHTML = `<span class="cardName">Humidity</span><i class="wi wi-humidity"></i><span class="speed">${humidity}%</span><span class="card-desc">Humidity measures the percentage of moisture in the air. High humidity can make temperatures feel hotter than they are.</span>`;
+    conditionsList.appendChild(humidityCard);
 })
 .catch(function(error){
     console.error("Failed to load data:", error);
@@ -99,10 +109,11 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=42.331429&longitude=-83.0
 
 const temperatureBtn = document.getElementById('temperatureBtn');
 temperatureBtn.addEventListener('click', function(){
-    document.getElementById('condition').style.display = 'block';
+    document.getElementById('temperature').style.display = 'block';
+    document.getElementById('condition').style.display = 'none';
 
     // Temperature fetch
-fetch('https://api.open-meteo.com/v1/forecast?latitude=42.331429&longitude=-83.045753&temperature_unit=fahrenheit&current=temperature_2m,apparent_temperature,relative_humidity_2m')
+fetch('https://api.open-meteo.com/v1/forecast?latitude=42.331429&longitude=-83.045753&temperature_unit=fahrenheit&current=temperature_2m,apparent_temperature')
 .then(function(tempResponse){
     return tempResponse.json();
 })
